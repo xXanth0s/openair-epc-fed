@@ -16,9 +16,8 @@ while ! sudo docker logs demo-db-init | grep -q "OK";
 do
    delay_in_sec=1
    sleep $delay_in_sec
-   echo "Waited $sleep_count secounds for the db"
-   docker_logs_of_the_db_init=$(sudo docker logs demo-db-init)
    sleep_count=$((sleep_count+delay_in_sec))
+   echo "Waited $sleep_count secounds for the db"
 done
 echo "Cassandra DB is up!"
 
